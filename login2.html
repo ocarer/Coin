@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코드 입력</title>
+    <script>
+        async function handleCodeSubmit(event) {
+            event.preventDefault();
+            const inputCode = document.getElementById("code").value;
+
+            try {
+                const response = await fetch('http://localhost:3000/processCode', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ code: inputCode }),
+                });
+                const result = await response.json();
+
+                if (result.message) {
+                    alert(result.message); // 결과 메시지 표시
+                    window.location.href = 'coin.html'; // 자동 이동
+                } else {
+                    alert("서버에서 예상치 못한 응답이 반환되었습니다.");
+                }
+            } catch (error) {
+                alert("오류 발생: 서버와 통신할 수 없습니다.");
+                console.error(error);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>코드 입력</h1>
+    <form onsubmit="handleCodeSubmit(event)">
+        <label for="code">코드 입력:</label>
+        <input type="text" id="code" required>
+        <br><br>
+        <button type="submit">코드 제출</button>
+    </form>
+</body>
+</html>
