@@ -3,35 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>실시간 수박코인 차트</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-        canvas {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
-        }
-    </style>
+    <title>수박코인</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>실시간 수박코인 차트</h1>
-    <p>현재 A 값: <span id="currentA">0</span></p>
-    <button onclick="increaseVariable()">구매하기</button>
-    <canvas id="candlestickChart"></canvas>
-
-    <script src="app.js"></script>
+    <header>
+        <h1>수박코인</h1>
+        <nav>
+            <a href="login2.html">코인 보기</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>수박코인 구매/판매 플랫폼</h2>
+            <p>실시간으로 코인을 관리하고 거래할 수 있는 플랫폼입니다.</p>
+            <a href="login2.html" class="button">코인 보기</a>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 수박코인 플랫폼</p>
+    </footer>
 </body>
 </html>
